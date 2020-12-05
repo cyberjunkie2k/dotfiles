@@ -1,0 +1,7 @@
+backend = "glx";
+vsync="opengl-mswc"
+# glx-no-stencil = true;
+#glx-swap-method = 2;
+unredir-if-possible = true;
+#glx-use-gpushader4 = true;
+# experimental-backends = true;
