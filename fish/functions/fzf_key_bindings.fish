@@ -1,0 +1,1 @@
+/home/cyberjunkie/.fzf/shell/key-bindings.fish
