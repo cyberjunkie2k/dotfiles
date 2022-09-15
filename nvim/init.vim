@@ -14,6 +14,8 @@ set scrolloff=8
 set signcolumn=yes
 set updatetime=50
 set mouse=a
+set termguicolors
+
 
 call plug#begin()
 Plug 'nvim-telescope/telescope.nvim'
@@ -27,15 +29,24 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'ggandor/lightspeed.nvim'
+Plug 'psliwka/vim-smoothie'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 nnoremap <F2> :NERDTreeFocus<CR>
 nnoremap <F2> :NERDTree<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <c-o> :Files<cr>
+nnoremap <c-p> :Files ~/<cr>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>bd :bd<CR>
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-" autocmd FileType python nnoremap <buffer> <F9> :w <bar> :exec '!python' shellescape(@%, 1)<cr>
+
 autocmd FileType python nnoremap <buffer> <F9> :w <bar> :TermExec cmd='python3 %'<cr>
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
 
 colorscheme happy_hacking 
 hi Normal guibg=NONE ctermbg=NONE
@@ -46,8 +57,9 @@ EOF
 
 lua << EOF
 require("toggleterm").setup{
-    size = 100, 
-    direction = 'vertical',
+    -- size = 100, 
+    size = 50, 
+    direction = 'horizontal',
     open_mapping = [[<F8>]],
 }
 EOF

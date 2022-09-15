@@ -9,12 +9,13 @@
         "json",
         "python"
     ],
-    "diagnostic.checkCurrentLine": false,
-    "diagnostic.virtualText": true,
+    "diagnostic.checkCurrentLine": true,
+    //    "diagnostic.virtualText": true,
     // python config
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Enabled": true,
+    "pyright.completion.snippetSupport": true,
+    "diagnostic.enable": false,
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "~/.config/nvim/utils/snips",
