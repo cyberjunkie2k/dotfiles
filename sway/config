@@ -29,7 +29,7 @@ exec swayidle -w \
 set $mod Mod4
 
 # Lock
-bindsym $mod+shift+x exec swaylock -i "/media/hdd/Users/Rossi/My\ Documents/Pictures/1618606230249.jpg"
+bindsym $mod+shift+x exec swaylock -i "_______"
 
 # Switch between desktops
 bindsym $mod+grave workspace back_and_forth
